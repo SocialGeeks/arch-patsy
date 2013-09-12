@@ -2,9 +2,14 @@
 
 VM to use for CTFs
 
+## Bring in submodules
+
+	git submodule init  
+	git submodule update  
+
 ## Create base box with packer  
 
-	packer build arch-packer.json  
+	packer build packer/arch-packer.json  
 
 ## Add base box to vagrant and start machine  
 
