@@ -21,6 +21,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "360"]
   end
 
+  config.ssh.forward_x11 =true
+
   $script = <<SCRIPT
 sudo pacman --noconfirm -S chromium
 sudo pacman --noconfirm -S firefox
