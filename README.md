@@ -9,11 +9,13 @@ VM to use for CTFs
 
 ## Create base box with packer  
 
-	packer build packer/arch-packer.json  
+	cd packer/archlinux-x86_64
+	packer build template.json  
 
 ## Add base box to vagrant and start machine  
 
 	vagrant box remove arch-patsy 
 	vagrant box add arch-patsy packer_virtualbox_virtualbox.box  
+        cd ../..
 	vagrant up  
 
