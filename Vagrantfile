@@ -23,40 +23,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.ssh.forward_x11 = true
 
-  $script = <<SCRIPT
-echo [+] Installing web packages
-sudo pacman --noconfirm -S chromium
-sudo pacman --noconfirm -S firefox
-sudo pacman --noconfirm -S firefox-adblock-plus
-sudo pacman --noconfirm -S firefox-firebug
-sudo pacman --noconfirm -S firefox-noscript
-sudo pacman --noconfirm -S flashplugin
+  config.vm.provision "shell", path: "scripts/devtools.sh"
+  config.vm.provision "shell", path: "scripts/nettools.sh"
+  config.vm.provision "shell", path: "scripts/web.sh"
+  config.vm.provision "shell", path: "scripts/x.sh"
+  config.vm.provision "shell", path: "scripts/irc.sh"
 
-echo [+] Installing network packages
-sudo pacman --noconfirm -S wireshark-gtk
-sudo usermod -aG wireshark vagrant
-sudo pacman --noconfirm -S gnu-netcat
-sudo pacman --noconfirm -S nmap
-sudo pacman --noconfirm -S tor
-sudo usermod -aG tor vagrant
-
-echo [+] Installing developer tools
-sudo pacman --noconfirm -S base-devel
-sudo pacman --noconfirm -S git
-sudo pacman --noconfirm -S php
-sudo pacman --noconfirm -S ruby
-sudo pacman --noconfirm -S python2
-sudo pacman --noconfirm -S python-virtualenv 
-sudo pacman --noconfirm -S nodejs
-
-echo [+] Installing xorg-xauth for XForwarding
-sudo pacman --noconfirm -S xorg-xauth
-
-echo [+] Installing IRC tools
-sudo pacman --noconfirm -S hexchat
-sudo pacman --noconfirm -S weechat
-
-SCRIPT
-
-  config.vm.provision "shell", inline: $script
 end
