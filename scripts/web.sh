@@ -5,10 +5,10 @@ echo [+] Installing web packages
 echo ************************************************************************* 
 sleep 3;
 
-sudo pacman --noconfirm -S chromium
-sudo pacman --noconfirm -S firefox
-sudo pacman --noconfirm -S firefox-adblock-plus
-sudo pacman --noconfirm -S firefox-firebug
-sudo pacman --noconfirm -S firefox-noscript
-sudo pacman --noconfirm -S flashplugin
+pacman --noconfirm -S chromium
+pacman --noconfirm -S firefox
+pacman --noconfirm -S firefox-adblock-plus
+pacman --noconfirm -S firefox-firebug
+pacman --noconfirm -S firefox-noscript
+pacman --noconfirm -S flashplugin
 

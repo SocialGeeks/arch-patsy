@@ -5,10 +5,10 @@ echo [+] Installing network tools
 echo *************************************************************************
 sleep 3;
 
-sudo pacman --noconfirm -S wireshark-gtk
-sudo usermod -aG wireshark vagrant
-sudo pacman --noconfirm -S gnu-netcat
-sudo pacman --noconfirm -S nmap
-sudo pacman --noconfirm -S tor
-sudo usermod -aG tor vagrant
+pacman --noconfirm -S wireshark-gtk
+usermod -aG wireshark vagrant
+pacman --noconfirm -S gnu-netcat
+pacman --noconfirm -S nmap
+pacman --noconfirm -S tor
+usermod -aG tor vagrant
 

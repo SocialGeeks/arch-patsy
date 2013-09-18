@@ -18,16 +18,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provider :virtualbox do |vb|
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "360"]
+    vb.customize ["modifyvm", :id, "--memory", "768"]
   end
 
   config.ssh.forward_x11 = true
 
+  config.vm.provision "shell", path: "scripts/multilib.sh"
   config.vm.provision "shell", path: "scripts/devtools.sh"
   config.vm.provision "shell", path: "scripts/nettools.sh"
   config.vm.provision "shell", path: "scripts/web.sh"
   config.vm.provision "shell", path: "scripts/x.sh"
   config.vm.provision "shell", path: "scripts/irc.sh"
   config.vm.provision "shell", path: "scripts/blackarch.sh"
+
+  config.vm.provision "shell", path: "scripts/harden.sh"
 
 end

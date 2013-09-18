@@ -1,10 +1,9 @@
 #!/bin/sh
 
 echo *************************************************************************
-echo [+] Installing IRC tools
+echo [+] Locking up root account 
 echo *************************************************************************
 sleep 3;
 
-pacman --noconfirm -S hexchat
-pacman --noconfirm -S weechat
- 
+sudo passwd -d root
+
