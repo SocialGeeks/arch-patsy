@@ -28,5 +28,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "scripts/web.sh"
   config.vm.provision "shell", path: "scripts/x.sh"
   config.vm.provision "shell", path: "scripts/irc.sh"
+  config.vm.provision "shell", path: "scripts/blackarch.sh"
 
 end

@@ -16,6 +16,6 @@ VM to use for CTFs
 
 	vagrant box remove arch-patsy 
 	vagrant box add arch-patsy packer_virtualbox_virtualbox.box  
-        cd ../..
+	cd ../..
 	vagrant up  
 

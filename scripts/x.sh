@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo *************************************************************************
-echo [+] Installing X packages needed for XForwarding                        *
+echo [+] Installing X packages needed for XForwarding
 echo *************************************************************************
 sleep 3;
 
