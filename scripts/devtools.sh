@@ -17,4 +17,5 @@ pacman --noconfirm -S hexedit
 pacman --noconfirm -S gdb
 pacman --noconfirm -S strace
 pacman --noconfirm -S ltrace
+pacman --noconfirm -S unzip
 
