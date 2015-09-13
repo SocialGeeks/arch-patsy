@@ -20,5 +20,9 @@ pacman --noconfirm -S strace
 pacman --noconfirm -S ltrace
 pacman --noconfirm -S unzip
 pacman --noconfirm -S pkgfile
+pacman --noconfirm -S python2-pip
+pacman --noconfirm -S python2-capstone
+pip2 install ropgadget
+pip2 install pwntools
 pkgfile --update
 

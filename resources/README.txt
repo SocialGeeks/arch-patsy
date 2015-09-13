@@ -85,6 +85,8 @@
   * strace
   * ltrace
   * unzip
+  * ROPGadget
+  * PWNTools
 
 
 ================================
@@ -113,5 +115,14 @@
   installed and XForwarding functional as the root user. XAUTHORITY is configured
   for root but not directly with SUDO. You can either become root via 'sudo su'
   or pass the XAUTHORITY environmental variable to sudo.
+
+
+================================
+-- PWNTools --------------------
+================================
+  Pwntool is a python toolkit for building exploits. You can read more
+  with this links below.
+ 
+  * https://pwntools.readthedocs.org/en/2.2/index.html
 
 
