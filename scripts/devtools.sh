@@ -12,6 +12,7 @@ pacman --noconfirm -S php
 pacman --noconfirm -S ruby
 pacman --noconfirm -S python2
 pacman --noconfirm -S python-virtualenv
+pacman --noconfirm -S python2-virtualenv
 pacman --noconfirm -S nodejs
 pacman --noconfirm -S hexedit
 pacman --noconfirm -S gdb
