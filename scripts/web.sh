@@ -11,4 +11,5 @@ pacman --noconfirm -S firefox-adblock-plus
 pacman --noconfirm -S firefox-firebug
 pacman --noconfirm -S firefox-noscript
 pacman --noconfirm -S flashplugin
+pacman --noconfirm -S zaproxy
 

@@ -33,6 +33,7 @@
   * firefox-firebug
   * firefox-noscript
   * flashplugin
+  * zaproxy
 
 ================================
 -- VIM -------------------------
