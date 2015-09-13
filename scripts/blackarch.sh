@@ -5,15 +5,41 @@ echo [+] Installing blackarch tools
 echo *************************************************************************
 sleep 3;
 
-cat <<EOF >> /etc/pacman.conf
-[blackarch]
-SigLevel = Optional TrustAll
-Server = http://www.blackarch.org/pub/blackarch/x86_64/
-EOF
+TEMP_DIR=$(mktemp -d)
+cd "${TEMP_DIR}"
 
-pacman -Sy
-pacman --noconfirm -S afflib autopsy bed blindelephant burpsuite cms-explorer creepy cryptcat dex2jar 
-pacman --noconfirm -S dirb dirbuster dmitry dnsenum dnsbf dnswalk exploit-db fang flasm guymager hashcat hashid
-pacman --noconfirm -S hexinject hydra maltego md5deep mitmproxy netdiscover p0f pack paros pdf-parser pdfid 
-pacman --noconfirm -S sfuzz skipfish sqlninja sslsniff sslstrip thc-pptp-bruter theharvester volatility zaproxy metasploit  
+# Download blackarch bootstrap script
+curl -O http://blackarch.org/strap.sh > /dev/null 2>&1
 
+# Verify script hash
+BLACKARCH_SHA1=$(sha1sum strap.sh | awk '{print $1}')
+if [[ "${BLACKARCH_SHA1}" != "f8456229463718c097cf70ed06a806f981be7423" ]];
+then
+    echo "CRITICAL: DarkArch strap failed validation. Got: ${BLACKARCH_SHA1}"
+    sleep 3
+    exit 1
+fi
+
+# Run bootstrap script and install blackarck
+sudo chmod +x ./strap.sh && sudo ./strap.sh
+
+# Install Parts
+sudo pacman --noconfirm -S blackarch-webapp blackarch-proxy blackarch-cracker \
+                           blackarch-spoof blackarch-misc blackarch-sniffer \
+                           blackarch-automation blackarch-fingerprint \
+                           blackarch-recon blackarch-database blackarch-tunnel \
+                           blackarch-decompiler
+
+echo Skipping optional packages:
+echo " - blackarch-fuzzer"
+echo " - blackarch-scanner"
+echo " - blackarch-networking"
+echo " - blackarch-disassembler"
+echo " - blackarch-reversing"
+echo " - blackarch-exploitation"
+echo " - blackarch-debugger"
+sleep 5
+
+# Remove temp directory
+cd -
+rm -rf "${TEMP_DIR}"

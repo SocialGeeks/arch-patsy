@@ -27,7 +27,11 @@ You can also download the [packer-boxes](https://github.com/SocialGeeks/packer-b
 
 The 'vagrant up' command will import the arch base image into VirtualBox and then run the post configuration specified in the Vagrantfile.  Use 'vagrant ssh' to ssh into arch-patsy.  XForwarding is configured and working.  
 
-	vagrant up  
+	vagrant up --provider=libivrt
 	vagrant ssh    
 	firefox &  
+
+Valid providers are
+   libvirt
+   virtualbox
 
