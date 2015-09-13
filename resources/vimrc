@@ -1,0 +1,53 @@
+set hidden
+set mouse=a
+set number
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set history=700
+set undolevels=700
+set noshowmode
+autocmd FileType make setlocal noexpandtab
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+vnoremap < <gv
+vnoremap > >gv
+
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=233 guibg=233
+au InsertLeave * match ExtraWhitespace /\s\+$/
+
+set t_Co=256
+syntax on
+filetype off
+filetype plugin indent on
+colorscheme wallaby
+set guifont=Liberation\ Mono\ for\ Powerline\ 13
+
+set tw=79           " width of document (used by gd)
+set nowrap          " don't automatically wrap on load
+set fo-=t           " don't automatically wrap text when typing
+set colorcolumn=80  " Set right bar
+highlight ColorColumn ctermbg=233
+
+" Enable Plugins
+" =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+execute pathogen#infect()
+execute pathogen#helptags()
+
+" Airline Config
+" =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:bufferline_echo = 0
+
+" NerdTREE (Git)
+" ------------
+noremap <C-p> :NERDTreeToggle<CR>
