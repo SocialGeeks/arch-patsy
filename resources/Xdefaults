@@ -1,0 +1,8 @@
+URxvt.depth:32
+URxvt.background:black
+URxvt.foreground:green
+URxvt.scrollBar: false
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=15,xft:PowerlineSymbols:size=11
+
+URxvt.transparent: true
+URxvt.shading:4
