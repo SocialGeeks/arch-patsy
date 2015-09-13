@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo *************************************************************************
-echo [+] Installing blackarch tools
+echo [+] Installing Braning and other resources.
 echo *************************************************************************
 sleep 3;
 
