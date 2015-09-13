@@ -28,6 +28,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "scripts/x.sh"
   config.vm.provision "shell", path: "scripts/irc.sh"
   config.vm.provision "shell", path: "scripts/blackarch.sh"
+  config.vm.provision "shell", path: "scripts/resources.sh"
+  config.vm.provision "shell", path: "scripts/vim.sh"
   config.vm.provision "shell", path: "scripts/harden.sh"
+
+  config.vm.synced_folder "resources/", "/vagrant/"
 
 end
