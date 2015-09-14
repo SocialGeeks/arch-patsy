@@ -24,5 +24,6 @@ pacman --noconfirm -S python2-pip
 pacman --noconfirm -S python2-capstone
 pip2 install ropgadget
 pip2 install pwntools
+pip2 install bpython
 pkgfile --update
 

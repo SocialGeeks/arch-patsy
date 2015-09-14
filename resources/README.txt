@@ -87,6 +87,7 @@
   * unzip
   * ROPGadget
   * PWNTools
+  * bpython
 
 
 ================================
