@@ -33,6 +33,7 @@
   * firefox-firebug
   * firefox-noscript
   * flashplugin
+  * zaproxy
 
 ================================
 -- VIM -------------------------
@@ -84,6 +85,8 @@
   * strace
   * ltrace
   * unzip
+  * ROPGadget
+  * PWNTools
 
 
 ================================
@@ -96,30 +99,30 @@
   * gnu-netcat
   * nmap
   * tor
+  * proxychains
+  * Metasploit
+  * armitage
+
 
 ================================
--- BLACKARCH -------------------
+-- Metasploit ------------------
 ================================
-  BlackArch is a pentesting toolkit built on top of Archlinux. The repos have
-  been added and a few meta-packages have been installed.
-  You can read @ http://blackarch.org/downloads.html#install-repo
+  The metasploit installer is located in the vagrant home directory. Due to
+  licensing, the installation is a task for the end-user. You can begin this
+  process by running the installer as root.
 
-  To get a full list of meta-packages:
-  $ sudo pacman -Sg | grep blackarch
+  Armitage is installed and ready to use but is dependent on metasploit being
+  installed and XForwarding functional as the root user. XAUTHORITY is configured
+  for root but not directly with SUDO. You can either become root via 'sudo su'
+  or pass the XAUTHORITY environmental variable to sudo.
 
-  The follwing meta-packages have been installed:
-  - blackarch-webapp
-  - blackarch-proxy
-  - blackarch-cracker
-  - blackarch-spoof
-  - blackarch-forensic
-  - blackarch-crypto
-  - blackarch-binary
-  - blackarch-misc
-  - blackarch-sniffer
-  - blackarch-automation
-  - blackarch-fingerprint
-  - blackarch-recon
-  - blackarch-database
-  - blackarch-tunnel
-  - blackarch-decompiler
+
+================================
+-- PWNTools --------------------
+================================
+  Pwntool is a python toolkit for building exploits. You can read more
+  with this links below.
+ 
+  * https://pwntools.readthedocs.org/en/2.2/index.html
+
+
