@@ -10,9 +10,10 @@ cat <<EOF >> /etc/pacman.conf
 Include = /etc/pacman.d/mirrorlist
 EOF
 
-pacman -Sy
+pacman -Syu
 pacman -S multilib-devel<<EOF
 
+y
 y
 y
 EOF
