@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "packer-arch-x86_64.box"
+  config.vm.box = "arch-x86_64"
 
   config.vm.provider :virtualbox do |vb|
     vb.cpus = 2
@@ -21,9 +21,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_x11 = true
 
   config.vm.hostname = "patsy"
+  config.vm.provision "shell", path: "scripts/update.sh"
   config.vm.provision "shell", path: "scripts/multilib.sh"
   config.vm.provision "shell", path: "scripts/general.sh"
   config.vm.provision "shell", path: "scripts/devtools.sh"
+  config.vm.provision "shell", path: "scripts/blackarch.sh"
+  config.vm.provision "shell", path: "scripts/metasploit.sh"
   config.vm.provision "shell", path: "scripts/nettools.sh"
   config.vm.provision "shell", path: "scripts/web.sh"
   config.vm.provision "shell", path: "scripts/x.sh"
@@ -32,6 +35,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "scripts/vim.sh"
   config.vm.provision "shell", path: "scripts/harden.sh"
 
-  config.vm.synced_folder "resources/", "/vagrant/"
+  config.vm.synced_folder "resources/", "/vagrant/", type: "rsync"
 
 end
