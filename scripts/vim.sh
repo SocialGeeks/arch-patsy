@@ -9,7 +9,7 @@ CURDIR=$(pwd)
 TMPDIR=$(sudo -u vagrant mktemp -d)
 
 cd "${TMPDIR}"
-sudo pacman -S --noconfirm base-devel vim
+sudo pacman -S --noconfirm vim
 
 curl https://aur.archlinux.org/cgit/aur.git/snapshot/vim-fugitive-git.tar.gz 2>/dev/null | sudo -u vagrant tar xzf -
 cd vim-fugitive-git && sudo -u vagrant makepkg -si --noconfirm 2>/dev/null
